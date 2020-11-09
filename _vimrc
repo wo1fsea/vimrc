@@ -1,8 +1,7 @@
-packloadall
-
 syntax on
 filetype plugin indent on
 
+set encoding=utf-8
 set number
 set autoindent
 set hlsearch
@@ -27,6 +26,7 @@ Plug 'mileszs/ack.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'morhetz/gruvbox'
 Plug 'Valloric/YouCompleteMe', {'do':'./install.py'}
+Plug 'vim-airline/vim-airline' 
 
 call plug#end()
 
