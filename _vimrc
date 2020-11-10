@@ -20,6 +20,7 @@ let g:plug_timout = 300
 call plug#begin()
 
 Plug 'scrooloose/nerdtree'
+Plug 'sjl/gundo.vim'
 Plug 'tpope/vim-vinegar'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mileszs/ack.vim'
