@@ -16,6 +16,8 @@ set wildmode=list:longest,full
 
 set clipboard=unnamed,unnamedplus
 
+set tags=tags;
+
 let g:plug_timout = 300
 call plug#begin()
 
@@ -43,3 +45,5 @@ set termguicolors
 colorscheme gruvbox 
 
 let g:ctrlp_working_path_mode = 'ra'
+
+map <leader>t :term<CR><C-w>J<C-w>:res 10<CR>
