@@ -1,6 +1,13 @@
 syntax on
 filetype plugin indent on
 
+" Vimscript file settings -------------------- {{{
+augroup filetype_vim
+    autocmd!
+    autocmd FileType vim setlocal foldmethod=marker
+augroup END
+"}}}
+
 set encoding=utf-8
 set number
 set autoindent
@@ -15,8 +22,6 @@ set wildmenu
 set wildmode=list:longest,full
 
 set clipboard=unnamed,unnamedplus
-
-set tags=tags;
 
 let g:plug_timout = 300
 call plug#begin()
@@ -46,4 +51,28 @@ colorscheme gruvbox
 
 let g:ctrlp_working_path_mode = 'ra'
 
-map <leader>t :term<CR><C-w>J<C-w>:res 10<CR>
+set tags=tags;
+autocmd BufWritePost *.cpp silent! !ctags -R &
+
+nnoremap <SPACE> <Nop>
+let mapleader = " "
+
+"map
+"nmap
+"imap
+"vmap
+"omap
+
+"noremap
+nnoremap <leader>t :term<CR><C-w>J<C-w>:res 10<CR>
+noremap <leader><tab> <C-w>w
+noremap <leader>ev :split $MYVIMRC<CR>
+noremap <leader>sv :source $MYVIMRC<CR>
+"inoremap
+"vnoremap
+"onoremap
+iabbrev @@ quanyongh@foxmail.com
+
+if has('gui_running')
+    set guifont=Source_Code_Pro_for_Powerline
+endif
