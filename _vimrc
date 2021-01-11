@@ -76,3 +76,26 @@ iabbrev @@ quanyongh@foxmail.com
 if has('gui_running')
     set guifont=Source_Code_Pro_for_Powerline
 endif
+
+
+"------------Gvim中文菜单乱码解决方案------------- {{{
+" 设置文件编码格式
+set encoding=utf-8
+set fileencodings=utf-8,chinese,latin-1,gbk,gb18030,gk2312
+set fileencoding=utf-8
+
+"解决菜单乱码 删除菜单，再重新添加菜单，vim会按照之前设定的编码格式创建菜单栏
+source $VIMRUNTIME/delmenu.vim
+source $VIMRUNTIME/menu.vim
+
+"解决consle提示信息输出乱码
+language messages zh_CN.utf-8
+
+"设置gvim隐藏菜单栏，工具栏，滚动条
+:set guioptions-=m  "remove menu bar
+:set guioptions-=T  "remove toolbar
+:set guioptions-=r  "remove right-hand scroll bar
+:set guioptions-=L  "remove left-hand scroll bar
+set guifont=Consolas:h11:cANSI:qDRAFT 
+
+"}}}
