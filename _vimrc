@@ -23,6 +23,7 @@ set wildmode=list:longest,full
 
 set clipboard=unnamed,unnamedplus
 
+" vim-plugin -------------------- {{{
 let g:plug_timout = 300
 call plug#begin()
 
@@ -37,6 +38,7 @@ Plug 'Valloric/YouCompleteMe', {'do':'./install.py'}
 Plug 'vim-airline/vim-airline' 
 
 call plug#end()
+"}}}
 
 autocmd VimEnter * NERDTree
 map <C-n> :NERDTreeToggle<CR>
@@ -78,7 +80,7 @@ if has('gui_running')
 endif
 
 
-"------------Gvim中文菜单乱码解决方案------------- {{{
+" gVim 设置 -------------------- {{{
 " 设置文件编码格式
 set encoding=utf-8
 set fileencodings=utf-8,chinese,latin-1,gbk,gb18030,gk2312
