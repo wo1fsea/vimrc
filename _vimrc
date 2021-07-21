@@ -56,7 +56,8 @@ colorscheme gruvbox
 let g:ctrlp_working_path_mode = 'ra'
 
 set tags=tags;
-autocmd BufWritePost *.cpp silent! !ctags -R &
+autocmd BufWritePost *.cpp,*.c,*.h,*.hpp silent! !ctags -R &
+autocmd BufWritePost *.cpp,*.c,*.h,*.hpp silent! YcmCompleter Format
 
 nnoremap <SPACE> <Nop>
 let mapleader = " "
@@ -70,6 +71,8 @@ let mapleader = " "
 "noremap
 nnoremap <leader>t :term<CR><C-w>J<C-w>:res 10<CR>
 noremap <leader><tab> <C-w>w
+noremap <leader>f :YcmCompleter Format<CR>
+noremap <leader>d :YcmCompleter GoToDefinition<CR> 
 noremap <leader>ev :split $MYVIMRC<CR>
 noremap <leader>sv :source $MYVIMRC<CR>
 "inoremap
@@ -81,7 +84,7 @@ iabbrev @@ quanyongh@foxmail.com
 
 if has('gui_running')
     if has('macunix')
-        set guifont=Source_Code_Pro_for_Powerline
+        set guifont=Source_Code_Pro_for_Powerline:h13
     endif
 
     if has('win32')
