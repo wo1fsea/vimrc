@@ -84,7 +84,8 @@ iabbrev @@ quanyongh@foxmail.com
 
 if has('gui_running')
     if has('macunix')
-        set guifont=Source_Code_Pro_for_Powerline:h13
+        set guifont=SourceCodeProForPowerline-Medium:h12
+        set background=dark
     endif
 
     if has('win32')
